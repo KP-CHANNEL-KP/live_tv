@@ -3,49 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Sports Streaming - တိုက်ရိုက်ပွဲကြည့်ရန်</title>
+    <title>⚽ Live Sports Dashboard</title>
     <link rel="stylesheet" href="live_style.css"> 
 </head>
 <body>
 
     <header class="live-header">
-        <h1>⚽ Live Sports Channel</h1>
-        <p>ယနေ့ တိုက်ရိုက်ထုတ်လွှင့်မှုများကို ကြည့်ရှုရန်</p>
+        <h1>⚽ Live Sports Channel Myanmar</h1>
+        <p>ယနေ့ တိုက်ရိုက်ထုတ်လွှင့်မှုများနှင့် နောက်ဆုံးရ သတင်းများကို ကြည့်ရှုရန်</p>
     </header>
 
-    <main class="live-main">
-        <section class="stream-container">
-            <h2 class="match-title">🔴 တိုက်ရိုက် ထုတ်လွှင့်နေသည်: Team A vs Team B</h2>
+    <main class="sports-dashboard">
+        
+        <div class="main-content">
             
-            <div class="video-player-wrapper">
-                <iframe 
-                    width="100%" 
-                    height="400"  src="https://www.youtube-nocookie.com/embed/pFSfFh26HPA?si=z7PAp3DNprsoRb8D" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-            
-            <div class="disclaimer">
-                <p>⚠️ မှတ်ချက်။ ဤထုတ်လွှင့်မှုသည် ပြင်ပ ဝန်ဆောင်မှုများကို အသုံးပြုထားခြင်းဖြစ်ပြီး၊ မူပိုင်ခွင့် သက်ဆိုင်မှုအတွက် ကျွန်ုပ်တို့ တာဝန်မရှိပါ။ Stream များသည် မကြာခဏ ပြောင်းလဲ ပျက်စီးနိုင်ပါသည်။</p>
-            </div>
-        </section>
+            <section class="video-section">
+                <h2 class="section-title">🔴 LIVE ထုတ်လွှင့်နေသည်: Chelsea vs Man Utd</h2>
+                
+                <div class="countdown-timer">
+                    <p>ပွဲစဖို့ ကျန်ရှိချိန်:</p>
+                    <div id="countdown" class="timer-display">00:00:00</div>
+                </div>
 
-        <section class="match-list">
-            <h3>📌 ယနေ့ ကျန်ရှိသော ပွဲစဉ်များ</h3>
-            <ul>
-                <li>Match 1: Team C vs Team D (Start: 08:00 PM)</li>
-                <li>Match 2: Team E vs Team F (Start: 10:30 PM)</li>
+                <div class="video-player-wrapper">
+                    <iframe 
+                        width="100%" 
+                        height="450" 
+                        src="[YOUR_LIVE_STREAM_EMBED_SRC_HERE]"  
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+            
+            <section class="table-section">
+                <h2 class="section-title">📊 ပရီးမီးယားလိဂ် အမှတ်ပေးဇယား (Demo)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>အသင်း</th>
+                            <th>P</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Liverpool</td><td>10</td><td>25</td></tr>
+                        <tr><td>2</td><td>Man City</td><td>10</td><td>23</td></tr>
+                        <tr><td>3</td><td>Arsenal</td><td>10</td><td>20</td></tr>
+                        <tr><td>4</td><td>Man Utd</td><td>10</td><td>18</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        
+        <aside class="sidebar">
+            <h2 class="section-title">📰 နောက်ဆုံးရ သတင်းများ</h2>
+            <ul class="news-list">
+                <li><a href="#">လီဗာပူးလ်က အမှတ်ပေးဇယားကို ဦးဆောင်နေဆဲ။</a></li>
+                <li><a href="#">ဟာလန်း (Haaland) ကိုရရှိဖို့ PSG ကြိုးပမ်း။</a></li>
+                <li><a href="#">ချဲလ်ဆီး၏ နည်းပြအပြောင်းအလဲ။</a></li>
+                <li><a href="#">ယနေ့ည ပွဲကြိုသုံးသပ်ချက်: Derby Match။</a></li>
+                <li><a href="#">ကစားသမား ဒဏ်ရာသတင်း။</a></li>
             </ul>
-        </section>
+
+            <h2 class="section-title chat-title">💬 Live Chat Room (Demo)</h2>
+            <div class="chat-box">
+                 <p>Chat Widget ကို ဤနေရာတွင် ထည့်သွင်းပါ။</p>
+            </div>
+        </aside>
+
     </main>
     
     <footer class="live-footer">
-        <p>© 2025 Live Sports Network. **(AdSense ကို လုံးဝ မသုံးပါ)**</p>
+        <p>© 2025 Live Sports Network. မူပိုင်ခွင့် အငြင်းပွားမှုများအတွက် ကျွန်ုပ်တို့တွင် တာဝန်မရှိပါ။</p>
     </footer>
+
+    <script>
+        // စမ်းသပ်ရန်အတွက် JavaScript Timer နမူနာ
+        function startCountdown() {
+            // Live Match စမည့် အချိန် (ဥပမာ- 2025/11/10 တွင် ည 8:30)
+            const matchTime = new Date("Nov 10, 2025 20:30:00").getTime();
+            
+            const x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = matchTime - now;
+                
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("countdown").innerHTML = 
+                    (hours < 10 ? '0' + hours : hours) + ":" + 
+                    (minutes < 10 ? '0' + minutes : minutes) + ":" + 
+                    (seconds < 10 ? '0' + seconds : seconds);
+                
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "LIVE NOW!";
+                }
+            }, 1000);
+        }
+        // startCountdown(); // Timer ကို စတင်ရန် လိုအပ်ပါက မှတ်ချက်ဖြုတ်ပါ
+    </script>
 
 </body>
 </html>
