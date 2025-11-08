@@ -1,55 +1,77 @@
-/* live_style.css */
+/* Base Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212; /* Dark Background */
-    color: #f1f1f1;
     margin: 0;
     padding: 0;
+    background-color: #eef2f7;
+    color: #333;
 }
 
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
 .live-header {
-    background-color: #e50914; /* Netflix Red / Strong Red */
-    padding: 20px;
+    background: #004d98; /* အပြာရင့်ရောင် */
+    color: white;
+    padding: 20px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .live-header h1 {
     margin: 0;
-    font-size: 2.2em;
+    font-size: 2em;
 }
 
 .live-header p {
     margin-top: 5px;
-    font-size: 1.1em;
+    font-size: 0.9em;
 }
 
-.live-main {
+/* Dashboard Layout (Grid) */
+.sports-dashboard {
+    display: grid;
+    grid-template-columns: 70% 30%; /* ဘယ် 70% (Player/Table), ညာ 30% (Sidebar) */
+    gap: 20px;
+    padding: 20px;
     max-width: 1200px;
     margin: 20px auto;
-    padding: 0 20px;
 }
 
-.stream-container {
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.match-title {
-    color: #ffcc00; /* Yellow */
-    font-size: 1.5em;
+.video-section, .table-section, .sidebar {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.section-title {
+    color: #d71920; /* အနီရောင် (စွမ်းအင်) */
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
     margin-bottom: 15px;
-    text-align: center;
+    font-size: 1.2em;
 }
 
+/* Video Player */
 .video-player-wrapper {
     position: relative;
-    width: 100%;
-    /* 16:9 Aspect Ratio အတွက် padding-top 56.25% သုံးသည် */
-    padding-top: 56.25%; 
-    background-color: black;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
     margin-bottom: 15px;
 }
 
@@ -57,46 +79,75 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.disclaimer {
-    color: #ff4d4d; /* Light Red for warning */
-    padding: 10px;
-    border: 1px solid #ff4d4d;
-    border-radius: 4px;
-    font-size: 0.9em;
-    text-align: center;
-}
-
-.match-list {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #1e1e1e;
+    width: 100%;
+    height: 100%;
     border-radius: 8px;
 }
 
-.match-list h3 {
-    color: #00bcd4; /* Cyan */
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+/* Countdown Timer */
+.countdown-timer {
+    text-align: center;
+    background: #ffe6e6; /* အနီဖျော့ဖျော့ */
+    color: #d71920;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
-.match-list ul {
-    list-style: none;
+.timer-display {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+thead {
+    background-color: #004d98;
+    color: white;
+}
+
+/* Sidebar (News) */
+.news-list {
+    list-style-type: none;
     padding: 0;
 }
 
-.match-list li {
-    padding: 10px 0;
-    border-bottom: 1px dashed #333;
+.news-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
 }
 
+.chat-box {
+    height: 300px; /* Chat Box အတွက် နေရာပေးခြင်း */
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+/* Footer */
 .live-footer {
+    background: #333;
+    color: #ccc;
     text-align: center;
-    padding: 15px;
-    background-color: #000;
-    color: #888;
-    font-size: 0.8em;
+    padding: 15px 0;
     margin-top: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 800px) {
+    .sports-dashboard {
+        grid-template-columns: 1fr; /* 800px အောက်ဆိုရင် ကော်လံ တစ်ခုတည်း ပြောင်းလိုက်ပါ */
+    }
 }
