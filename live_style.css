@@ -1,84 +1,88 @@
 /* Base Styles */
 body {
-    font-family: 'Roboto', sans-serif; /* ပိုမိုခေတ်မီသော Font ကို အသုံးပြုရန် (Link ထည့်ရန် လိုအပ်နိုင်သည်) */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* ပိုမို Clean ဖြစ်သော Font */
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Dark Mode Background */
-    color: #e0e0e0; /* Light Gray Text */
+    background-color: #f0f2f5; /* အဖြူနု Background */
+    color: #333;
+    line-height: 1.6; /* စာကြောင်းခြား ပိုမို သက်တောင့်သက်သာဖြစ်စေရန် */
 }
 
 a {
-    color: #4CAF50; /* အစိမ်းရောင် Link များ */
+    color: #007bff;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.2s;
 }
 
 a:hover {
-    color: #66BB6A;
-    text-decoration: none;
+    color: #0056b3;
+    text-decoration: underline;
 }
 
-/* Header */
+/* Header - Clean Look */
 .live-header {
-    background: #1e1e1e; /* ပိုမိုနက်မှောင်သော Header */
-    color: white;
-    padding: 25px 0;
+    background: #ffffff; /* Header ကို အဖြူရောင်ထားခြင်း */
+    color: #333;
+    padding: 20px 0;
     text-align: center;
-    border-bottom: 3px solid #4CAF50; /* အစိမ်းရောင် border (Accent Color) */
+    border-bottom: 5px solid #007bff; /* အပြာရောင် Accent Line */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .live-header h1 {
     margin: 0;
-    font-size: 2.2em;
-    font-weight: 700;
+    font-size: 2em;
+    font-weight: 600; /* စာလုံးအလေးချိန် ချိန်ညှိခြင်း */
 }
 
 .live-header p {
     margin-top: 5px;
-    font-size: 1em;
-    color: #a0a0a0;
+    font-size: 0.9em;
+    color: #666;
 }
 
 /* Dashboard Layout (Grid) */
 .sports-dashboard {
     display: grid;
-    grid-template-columns: 70% 30%; /* Layout အချိုးအစား မပြောင်းလဲပါ */
+    grid-template-columns: 2fr 1fr; /* Main Content 2/3, Sidebar 1/3 (ဥပမာ 66%/33%) */
     gap: 30px;
     padding: 30px;
-    max-width: 1300px; /* အနံကို ပိုမိုချဲ့လိုက်သည် */
-    margin: 20px auto;
+    max-width: 1280px;
+    margin: 30px auto;
 }
 
 .main-content {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 30px; /* အပိုင်းများကြား နေရာခြားခြင်း */
 }
 
+/* Card Style - Clean and Elevated */
 .video-section, .table-section, .sidebar {
-    background: #1e1e1e; /* Darker Card Background */
-    padding: 20px;
-    border-radius: 12px; /* ပိုကြီးသော ကွေးညွှတ်မှု (Rounded Corners) */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* ပိုမိုထင်ရှားသော Shadow */
+    background: white;
+    padding: 25px; /* Padding ပိုပေးခြင်း */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ပိုမိုနူးညံ့သော Shadow */
+    border: 1px solid #e0e0e0; /* နူးညံ့သော ဘောင် */
 }
 
 .section-title {
-    color: #e0e0e0;
-    border-bottom: 2px solid #333;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0; /* နူးညံ့သော မျဉ်းသားခြင်း */
     padding-bottom: 10px;
     margin-bottom: 20px;
-    font-size: 1.4em;
-    font-weight: 500;
+    font-size: 1.3em;
+    font-weight: 600;
 }
 
 /* Video Player */
 .video-player-wrapper {
-    /* ... 16:9 Aspect Ratio Styles ... */
     position: relative;
     padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
     margin-bottom: 20px;
+    border-radius: 6px;
 }
 
 .video-player-wrapper iframe {
@@ -87,49 +91,47 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* iframe အတွက် ဘောင်မထားခြင်း */
 }
 
 /* Countdown Timer */
 .countdown-timer {
     text-align: center;
-    background: #383838; /* Darker Timer Background */
-    color: #4CAF50; /* Accent Color */
+    background: #e6f7ff; /* အပြာနုရောင် background */
+    color: #007bff;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
+    font-weight: 500;
+    border: 1px solid #cceeff;
 }
 
 .timer-display {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: bold;
-    letter-spacing: 2px; /* စာလုံးခြား နည်းနည်း ခွာလိုက်သည် */
 }
 
 /* Table */
 table {
     width: 100%;
     border-collapse: collapse;
-    text-align: left;
+    text-align: center; /* ဇယားထဲက စာများကို အလယ်တည့်တည့်ထားခြင်း */
     font-size: 0.95em;
 }
 
 th, td {
-    padding: 12px 10px;
-    border-bottom: 1px solid #333; /* Darker lines */
+    padding: 12px 8px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 thead {
-    background-color: #383838;
-    color: white;
+    background-color: #f7f7f7;
+    color: #333;
+    font-weight: 600;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #252525; /* ဇယား အစုံကွက်များအတွက် */
-}
 tbody tr:hover {
-    background-color: #333;
+    background-color: #fafafa;
 }
 
 /* Sidebar (News & Chat) */
@@ -139,35 +141,38 @@ tbody tr:hover {
 }
 
 .news-list li {
-    padding: 10px 0;
-    border-bottom: 1px dashed #333;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95em;
+}
+
+.news-list li:last-child {
+    border-bottom: none;
 }
 
 .chat-box {
-    height: 350px; /* Chat Box အတွက် နေရာပေးခြင်း */
-    background: #252525;
-    border: 1px solid #333;
-    border-radius: 8px;
+    height: 350px; 
+    background: #fcfcfc;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
     padding: 10px;
     overflow-y: auto;
 }
 
-.chat-title {
+/* Footer */
+.live-footer {
+    background: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 15px 0;
     margin-top: 30px;
 }
 
-/* Footer */
-.live-footer {
-    background: #1e1e1e;
-    color: #a0a0a0;
-    text-align: center;
-    padding: 20px 0;
-}
-
 /* Mobile Responsiveness */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .sports-dashboard {
         grid-template-columns: 1fr; 
         gap: 20px;
+        padding: 15px;
     }
 }
