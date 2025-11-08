@@ -1,78 +1,84 @@
 /* Base Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* ပိုမိုခေတ်မီသော Font ကို အသုံးပြုရန် (Link ထည့်ရန် လိုအပ်နိုင်သည်) */
     margin: 0;
     padding: 0;
-    background-color: #eef2f7;
-    color: #333;
+    background-color: #121212; /* Dark Mode Background */
+    color: #e0e0e0; /* Light Gray Text */
 }
 
 a {
-    color: #007bff;
+    color: #4CAF50; /* အစိမ်းရောင် Link များ */
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #66BB6A;
+    text-decoration: none;
 }
 
 /* Header */
 .live-header {
-    background: #004d98; /* အပြာရင့်ရောင် */
+    background: #1e1e1e; /* ပိုမိုနက်မှောင်သော Header */
     color: white;
-    padding: 20px 0;
+    padding: 25px 0;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-bottom: 3px solid #4CAF50; /* အစိမ်းရောင် border (Accent Color) */
 }
 
 .live-header h1 {
     margin: 0;
-    font-size: 2em;
+    font-size: 2.2em;
+    font-weight: 700;
 }
 
 .live-header p {
     margin-top: 5px;
-    font-size: 0.9em;
+    font-size: 1em;
+    color: #a0a0a0;
 }
 
 /* Dashboard Layout (Grid) */
 .sports-dashboard {
     display: grid;
-    grid-template-columns: 70% 30%; /* ဘယ် 70% (Player/Table), ညာ 30% (Sidebar) */
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
+    grid-template-columns: 70% 30%; /* Layout အချိုးအစား မပြောင်းလဲပါ */
+    gap: 30px;
+    padding: 30px;
+    max-width: 1300px; /* အနံကို ပိုမိုချဲ့လိုက်သည် */
     margin: 20px auto;
 }
 
 .main-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 
 .video-section, .table-section, .sidebar {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background: #1e1e1e; /* Darker Card Background */
+    padding: 20px;
+    border-radius: 12px; /* ပိုကြီးသော ကွေးညွှတ်မှု (Rounded Corners) */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* ပိုမိုထင်ရှားသော Shadow */
 }
 
 .section-title {
-    color: #d71920; /* အနီရောင် (စွမ်းအင်) */
-    border-bottom: 2px solid #eee;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-    font-size: 1.2em;
+    color: #e0e0e0;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-weight: 500;
 }
 
 /* Video Player */
 .video-player-wrapper {
+    /* ... 16:9 Aspect Ratio Styles ... */
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .video-player-wrapper iframe {
@@ -82,21 +88,23 @@ a:hover {
     width: 100%;
     height: 100%;
     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Countdown Timer */
 .countdown-timer {
     text-align: center;
-    background: #ffe6e6; /* အနီဖျော့ဖျော့ */
-    color: #d71920;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    background: #383838; /* Darker Timer Background */
+    color: #4CAF50; /* Accent Color */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .timer-display {
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: bold;
+    letter-spacing: 2px; /* စာလုံးခြား နည်းနည်း ခွာလိုက်သည် */
 }
 
 /* Table */
@@ -104,50 +112,62 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
+    font-size: 0.95em;
 }
 
 th, td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    padding: 12px 10px;
+    border-bottom: 1px solid #333; /* Darker lines */
 }
 
 thead {
-    background-color: #004d98;
+    background-color: #383838;
     color: white;
 }
 
-/* Sidebar (News) */
+tbody tr:nth-child(even) {
+    background-color: #252525; /* ဇယား အစုံကွက်များအတွက် */
+}
+tbody tr:hover {
+    background-color: #333;
+}
+
+/* Sidebar (News & Chat) */
 .news-list {
     list-style-type: none;
     padding: 0;
 }
 
 .news-list li {
-    padding: 8px 0;
-    border-bottom: 1px dashed #eee;
+    padding: 10px 0;
+    border-bottom: 1px dashed #333;
 }
 
 .chat-box {
-    height: 300px; /* Chat Box အတွက် နေရာပေးခြင်း */
-    background: #f9f9f9;
-    border: 1px solid #eee;
-    border-radius: 5px;
+    height: 350px; /* Chat Box အတွက် နေရာပေးခြင်း */
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 8px;
     padding: 10px;
     overflow-y: auto;
 }
 
+.chat-title {
+    margin-top: 30px;
+}
+
 /* Footer */
 .live-footer {
-    background: #333;
-    color: #ccc;
+    background: #1e1e1e;
+    color: #a0a0a0;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
+    padding: 20px 0;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 800px) {
     .sports-dashboard {
-        grid-template-columns: 1fr; /* 800px အောက်ဆိုရင် ကော်လံ တစ်ခုတည်း ပြောင်းလိုက်ပါ */
+        grid-template-columns: 1fr; 
+        gap: 20px;
     }
 }
