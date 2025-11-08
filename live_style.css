@@ -1,0 +1,102 @@
+/* live_style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark Background */
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+.live-header {
+    background-color: #e50914; /* Netflix Red / Strong Red */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.live-header h1 {
+    margin: 0;
+    font-size: 2.2em;
+}
+
+.live-header p {
+    margin-top: 5px;
+    font-size: 1.1em;
+}
+
+.live-main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.stream-container {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.match-title {
+    color: #ffcc00; /* Yellow */
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.video-player-wrapper {
+    position: relative;
+    width: 100%;
+    /* 16:9 Aspect Ratio အတွက် padding-top 56.25% သုံးသည် */
+    padding-top: 56.25%; 
+    background-color: black;
+    margin-bottom: 15px;
+}
+
+.video-player-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.disclaimer {
+    color: #ff4d4d; /* Light Red for warning */
+    padding: 10px;
+    border: 1px solid #ff4d4d;
+    border-radius: 4px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.match-list {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+}
+
+.match-list h3 {
+    color: #00bcd4; /* Cyan */
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.match-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.match-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #333;
+}
+
+.live-footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #000;
+    color: #888;
+    font-size: 0.8em;
+    margin-top: 20px;
+}
