@@ -1,112 +1,175 @@
-<!DOCTYPE html>
-<html lang="my">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚽ Live Sports Dashboard</title>
-    <link rel="stylesheet" href="live_style.css"> 
-</head>
-<body>
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* ပိုမိုခေတ်မီသော Font ကို အသုံးပြုရန် (Link ထည့်ရန် လိုအပ်နိုင်သည်) */
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark Mode Background */
+    color: #e0e0e0; /* Light Gray Text */
+}
 
-    <header class="live-header">
-        <h1>⚽ Live Sports Channel Myanmar</h1>
-        <p>ယနေ့ တိုက်ရိုက်ထုတ်လွှင့်မှုများနှင့် နောက်ဆုံးရ သတင်းများကို ကြည့်ရှုရန်</p>
-    </header>
+a {
+    color: #4CAF50; /* အစိမ်းရောင် Link များ */
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-    <main class="sports-dashboard">
-        
-        <div class="main-content">
-            
-            <section class="video-section">
-                <h2 class="section-title">🔴 LIVE ထုတ်လွှင့်နေသည်: Chelsea vs Man Utd</h2>
-                
-                <div class="countdown-timer">
-                    <p>ပွဲစဖို့ ကျန်ရှိချိန်:</p>
-                    <div id="countdown" class="timer-display">00:00:00</div>
-                </div>
+a:hover {
+    color: #66BB6A;
+    text-decoration: none;
+}
 
-                <div class="video-player-wrapper">
-                    <iframe 
-                        width="100%" 
-                        height="450" 
-                        src="https://www.youtube-nocookie.com/embed/z8v6jYdlqsQ?si=JiUAMl0LJi6nt8cP"  
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </section>
-            
-            <section class="table-section">
-                <h2 class="section-title">📊 ပရီးမီးယားလိဂ် အမှတ်ပေးဇယား (Demo)</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>အသင်း</th>
-                            <th>P</th>
-                            <th>Pts</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>Liverpool</td><td>10</td><td>25</td></tr>
-                        <tr><td>2</td><td>Man City</td><td>10</td><td>23</td></tr>
-                        <tr><td>3</td><td>Arsenal</td><td>10</td><td>20</td></tr>
-                        <tr><td>4</td><td>Man Utd</td><td>10</td><td>18</td></tr>
-                    </tbody>
-                </table>
-            </section>
-        </div>
-        
-                <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6908f7f7e46567194f00decc/1j95gh8k6';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+/* Header */
+.live-header {
+    background: #1e1e1e; /* ပိုမိုနက်မှောင်သော Header */
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    border-bottom: 3px solid #4CAF50; /* အစိမ်းရောင် border (Accent Color) */
+}
 
+.live-header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    font-weight: 700;
+}
 
-    </main>
-    
-    <footer class="live-footer">
-        <p>© 2025 Live Sports Network. မူပိုင်ခွင့် အငြင်းပွားမှုများအတွက် ကျွန်ုပ်တို့တွင် တာဝန်မရှိပါ။</p>
-    </footer>
+.live-header p {
+    margin-top: 5px;
+    font-size: 1em;
+    color: #a0a0a0;
+}
 
-    <script>
-        // စမ်းသပ်ရန်အတွက် JavaScript Timer နမူနာ
-        function startCountdown() {
-            // Live Match စမည့် အချိန် (ဥပမာ- 2025/11/10 တွင် ည 8:30)
-            const matchTime = new Date("Nov 10, 2025 20:30:00").getTime();
-            
-            const x = setInterval(function() {
-                const now = new Date().getTime();
-                const distance = matchTime - now;
-                
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                document.getElementById("countdown").innerHTML = 
-                    (hours < 10 ? '0' + hours : hours) + ":" + 
-                    (minutes < 10 ? '0' + minutes : minutes) + ":" + 
-                    (seconds < 10 ? '0' + seconds : seconds);
-                
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("countdown").innerHTML = "LIVE NOW!";
-                }
-            }, 1000);
-        }
-         startCountdown(); // Timer ကို စတင်ရန် လိုအပ်ပါက မှတ်ချက်ဖြုတ်ပါ
-    </script>
+/* Dashboard Layout (Grid) */
+.sports-dashboard {
+    display: grid;
+    grid-template-columns: 70% 30%; /* Layout အချိုးအစား မပြောင်းလဲပါ */
+    gap: 30px;
+    padding: 30px;
+    max-width: 1300px; /* အနံကို ပိုမိုချဲ့လိုက်သည် */
+    margin: 20px auto;
+}
 
-</body>
-</html>
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.video-section, .table-section, .sidebar {
+    background: #1e1e1e; /* Darker Card Background */
+    padding: 20px;
+    border-radius: 12px; /* ပိုကြီးသော ကွေးညွှတ်မှု (Rounded Corners) */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* ပိုမိုထင်ရှားသော Shadow */
+}
+
+.section-title {
+    color: #e0e0e0;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+/* Video Player */
+.video-player-wrapper {
+    /* ... 16:9 Aspect Ratio Styles ... */
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.video-player-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Countdown Timer */
+.countdown-timer {
+    text-align: center;
+    background: #383838; /* Darker Timer Background */
+    color: #4CAF50; /* Accent Color */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 2px; /* စာလုံးခြား နည်းနည်း ခွာလိုက်သည် */
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+th, td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #333; /* Darker lines */
+}
+
+thead {
+    background-color: #383838;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #252525; /* ဇယား အစုံကွက်များအတွက် */
+}
+tbody tr:hover {
+    background-color: #333;
+}
+
+/* Sidebar (News & Chat) */
+.news-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.news-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #333;
+}
+
+.chat-box {
+    height: 350px; /* Chat Box အတွက် နေရာပေးခြင်း */
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-title {
+    margin-top: 30px;
+}
+
+/* Footer */
+.live-footer {
+    background: #1e1e1e;
+    color: #a0a0a0;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 800px) {
+    .sports-dashboard {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+}
+
+ဒီ code အတိုင်း လေးငါကြိုက်တယ် ဒီအတိုင်းလေးပဲ မှတ်ထား
