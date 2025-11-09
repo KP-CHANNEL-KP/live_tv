@@ -23,7 +23,7 @@ a:hover {
     color: white;
     padding: 25px 0;
     text-align: center;
-    border-bottom: 3px solid #4CAF50; /* Accent Color */
+    border-bottom: 3px solid #4CAF50; 
 }
 
 .live-header h1 {
@@ -44,7 +44,7 @@ a:hover {
     grid-template-columns: 70% 30%; 
     gap: 30px;
     padding: 20px;
-    max-width: 100%; /* <<-- မျက်နှာပြင် အပြည့်ယူရန် -->> */
+    max-width: 100%; 
     margin: 0 auto;
 }
 
@@ -55,9 +55,9 @@ a:hover {
 }
 
 .video-section, .table-section, .sidebar {
-    background: #1e1e1e; /* Darker Card Background */
+    background: #1e1e1e; 
     padding: 20px;
-    border-radius: 12px; /* Rounded Corners */
+    border-radius: 12px; 
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
 }
 
@@ -93,7 +93,7 @@ a:hover {
 .countdown-timer {
     text-align: center;
     background: #383838; 
-    color: #4CAF50; /* Accent Color */
+    color: #4CAF50; 
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -130,19 +130,12 @@ tbody tr:hover {
     background-color: #333;
 }
 
-/* Sidebar (Chat) */
-.chat-box {
-    height: 550px; /* Chat Box အတွက် နေရာပိုပေးခြင်း */
-    background: #252525;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 10px;
-    overflow-y: auto;
+/* Sidebar (Poll/Vote အတွက် CSS အသစ်) */
+.poll-container {
+    /* Poll ကို ဇယားနဲ့ အမြင့်တူနီးပါးဖြစ်အောင် ချိန်ညှိသည် */
+    height: 600px; /* Poll ၏ အမြင့်ကို ချိန်ညှိရန် */
 }
 
-.chat-title {
-    margin-top: 0; /* Chat ကို အပေါ်ဆုံးမှာထားလို့ margin ပြင်ခြင်း */
-}
 
 /* Footer */
 .live-footer {
@@ -159,7 +152,7 @@ tbody tr:hover {
         gap: 20px;
         padding: 10px;
     }
-    .chat-box {
-        height: 400px; /* ဖုန်းမှာ Chat Box ကို လျှော့ပေးခြင်း */
+    .poll-container {
+        height: 400px; /* ဖုန်းမှာ Poll/Vote ကို လျှော့ပေးခြင်း */
     }
 }
