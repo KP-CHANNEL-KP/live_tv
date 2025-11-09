@@ -1,10 +1,10 @@
 /* Base Styles */
 body {
-    font-family: 'Roboto', sans-serif; /* ပိုမိုခေတ်မီသော Font ကို အသုံးပြုရန် (Link ထည့်ရန် လိုအပ်နိုင်သည်) */
+    font-family: 'Roboto', sans-serif; 
     margin: 0;
     padding: 0;
     background-color: #121212; /* Dark Mode Background */
-    color: #e0e0e0; /* Light Gray Text */
+    color: #e0e0e0; 
 }
 
 a {
@@ -15,16 +15,15 @@ a {
 
 a:hover {
     color: #66BB6A;
-    text-decoration: none;
 }
 
 /* Header */
 .live-header {
-    background: #1e1e1e; /* ပိုမိုနက်မှောင်သော Header */
+    background: #1e1e1e; 
     color: white;
     padding: 25px 0;
     text-align: center;
-    border-bottom: 3px solid #4CAF50; /* အစိမ်းရောင် border (Accent Color) */
+    border-bottom: 3px solid #4CAF50; /* Accent Color */
 }
 
 .live-header h1 {
@@ -39,16 +38,15 @@ a:hover {
     color: #a0a0a0;
 }
 
-/* Dashboard Layout (Grid) ကို ပြင်ဆင်ခြင်း */
+/* Dashboard Layout (Grid) - Full Width ပြင်ဆင်ချက် */
 .sports-dashboard {
     display: grid;
-    grid-template-columns: 70% 30%; /* Layout အချိုးအစား မပြောင်းလဲပါ */
+    grid-template-columns: 70% 30%; 
     gap: 30px;
-    padding: 20px; /* ဘေးဘောင် padding နည်းနည်း လျှော့ခြင်း */
-    max-width: 100%; /* <<-- အဓိက ပြင်ဆင်ချက်: မျက်နှာပြင် အပြည့်ယူပါ -->> */
-    margin: 0 auto; /* <<-- မျက်နှာပြင် အပြည့်ယူရင် margin မလိုတော့ပါဘူး -->> */
+    padding: 20px;
+    max-width: 100%; /* <<-- မျက်နှာပြင် အပြည့်ယူရန် -->> */
+    margin: 0 auto;
 }
-
 
 .main-content {
     display: flex;
@@ -59,8 +57,8 @@ a:hover {
 .video-section, .table-section, .sidebar {
     background: #1e1e1e; /* Darker Card Background */
     padding: 20px;
-    border-radius: 12px; /* ပိုကြီးသော ကွေးညွှတ်မှု (Rounded Corners) */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* ပိုမိုထင်ရှားသော Shadow */
+    border-radius: 12px; /* Rounded Corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
 }
 
 .section-title {
@@ -74,7 +72,6 @@ a:hover {
 
 /* Video Player */
 .video-player-wrapper {
-    /* ... 16:9 Aspect Ratio Styles ... */
     position: relative;
     padding-bottom: 56.25%; 
     height: 0;
@@ -95,7 +92,7 @@ a:hover {
 /* Countdown Timer */
 .countdown-timer {
     text-align: center;
-    background: #383838; /* Darker Timer Background */
+    background: #383838; 
     color: #4CAF50; /* Accent Color */
     padding: 15px;
     border-radius: 8px;
@@ -105,7 +102,7 @@ a:hover {
 .timer-display {
     font-size: 2.5em;
     font-weight: bold;
-    letter-spacing: 2px; /* စာလုံးခြား နည်းနည်း ခွာလိုက်သည် */
+    letter-spacing: 2px;
 }
 
 /* Table */
@@ -118,7 +115,7 @@ table {
 
 th, td {
     padding: 12px 10px;
-    border-bottom: 1px solid #333; /* Darker lines */
+    border-bottom: 1px solid #333; 
 }
 
 thead {
@@ -127,25 +124,15 @@ thead {
 }
 
 tbody tr:nth-child(even) {
-    background-color: #252525; /* ဇယား အစုံကွက်များအတွက် */
+    background-color: #252525; 
 }
 tbody tr:hover {
     background-color: #333;
 }
 
-/* Sidebar (News & Chat) */
-.news-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.news-list li {
-    padding: 10px 0;
-    border-bottom: 1px dashed #333;
-}
-
+/* Sidebar (Chat) */
 .chat-box {
-    height: 350px; /* Chat Box အတွက် နေရာပေးခြင်း */
+    height: 700px; /* Chat Box အတွက် နေရာပိုပေးခြင်း */
     background: #252525;
     border: 1px solid #333;
     border-radius: 8px;
@@ -154,7 +141,7 @@ tbody tr:hover {
 }
 
 .chat-title {
-    margin-top: 30px;
+    margin-top: 0; /* Chat ကို အပေါ်ဆုံးမှာထားလို့ margin ပြင်ခြင်း */
 }
 
 /* Footer */
@@ -170,5 +157,9 @@ tbody tr:hover {
     .sports-dashboard {
         grid-template-columns: 1fr; 
         gap: 20px;
+        padding: 10px;
+    }
+    .chat-box {
+        height: 400px; /* ဖုန်းမှာ Chat Box ကို လျှော့ပေးခြင်း */
     }
 }
