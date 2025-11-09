@@ -10,7 +10,7 @@
 
     <header class="live-header">
         <h1>⚽ Live Sports Channel Myanmar</h1>
-        <p>ယနေ့ တိုက်ရိုက်ထုတ်လွှင့်မှုများနှင့် သတင်းများကို ကြည့်ရှုရန်</p>
+        <p>ယနေ့ တိုက်ရိုက်ထုတ်လွှင့်မှုများနှင့် နောက်လာမည့်ပွဲစဉ်များကို ကြည့်ရှုရန်</p>
     </header>
 
     <main class="sports-dashboard">
@@ -61,21 +61,13 @@
         
         <aside class="sidebar">
             
-            <h2 class="section-title">📊 ပွဲစဉ် ဆန္ဒမဲ (Poll)</h2>
-            
-            <div class="poll-container" style="height: 600px; overflow: hidden; background: #252525;">
-                
-                <iframe 
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSddFOuGRVe6tq2vsh3fVTaJ3rwzhuFqPRlWvHXEf8aNwhQsjA/viewform?embedded=true"
-                    width="100%" 
-                    height="100%" 
-                    frameborder="0" 
-                    marginheight="0" 
-                    marginwidth="0">
-                    Loading Poll...
-                </iframe>
-                
-            </div>
+            <h2 class="section-title">🗓️ နောက်လာမည့် ပွဲစဉ်များ</h2>
+            <ul class="news-list" style="list-style: none; padding: 0;">
+                <li style="padding: 10px 0; border-bottom: 1px dashed #333;"><a href="#">Match 1: Team C vs Team D (Start: 08:30 PM)</a></li>
+                <li style="padding: 10px 0; border-bottom: 1px dashed #333;"><a href="#">Match 2: Team E vs Team F (Start: 10:30 PM)</a></li>
+                <li style="padding: 10px 0; border-bottom: 1px dashed #333;"><a href="#">Match 3: Team G vs Team H (Start: 01:00 AM)</a></li>
+                <li style="padding: 10px 0;"><a href="#">Match 4: Team I vs Team J (Start: 03:00 AM)</a></li>
+            </ul>
             
         </aside>
 
@@ -85,20 +77,32 @@
         <p>© 2025 Live Sports Network. မူပိုင်ခွင့် အငြင်းပွားမှုများအတွက် ကျွန်ုပ်တို့တွင် တာဝန်မရှိပါ။</p>
     </footer>
 
-            <aside class="sidebar">
+    <script>
+        function startCountdown() {
+            // Live Match စမည့် အချိန် (ဥပမာ- 2025/11/10 တွင် ည 8:30) - လိုအပ်ရင် ပြင်ပါ
+            const matchTime = new Date("Nov 10, 2025 20:30:00").getTime();
             
-            <h2 class="section-title">🗳️ ယနေ့ပွဲစဉ် ဆန္ဒမဲ</h2>
-            
-            <div style="padding: 15px; text-align: center;">
-                <p>ပွဲရလဒ်ကို ခန့်မှန်းရန် အောက်ပါခလုတ်ကို နှိပ်ပါ:</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSddFOuGRVe6tq2vsh3fVTaJ3rwzhuFqPRlWvHXEf8aNwhQsjA/viewform" target="_blank"
-                   style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px; margin-top: 15px; font-weight: bold;">
-                   Vote ပေးရန် နှိပ်ပါ
-                </a>
-            </div>
-            
-        </aside>
-
+            const x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = matchTime - now;
+                
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("countdown").innerHTML = 
+                    (hours < 10 ? '0' + hours : hours) + ":" + 
+                    (minutes < 10 ? '0' + minutes : minutes) + ":" + 
+                    (seconds < 10 ? '0' + seconds : seconds);
+                
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "LIVE NOW!";
+                }
+            }, 1000);
+        }
+        startCountdown();
+    </script>
 
 </body>
 </html>
