@@ -85,32 +85,20 @@
         <p>© 2025 Live Sports Network. မူပိုင်ခွင့် အငြင်းပွားမှုများအတွက် ကျွန်ုပ်တို့တွင် တာဝန်မရှိပါ။</p>
     </footer>
 
-    <script>
-        function startCountdown() {
-            // Live Match စမည့် အချိန် (ဥပမာ- 2025/11/10 တွင် ည 8:30) - လိုအပ်ရင် ပြင်ပါ
-            const matchTime = new Date("Nov 10, 2025 20:30:00").getTime();
+            <aside class="sidebar">
             
-            const x = setInterval(function() {
-                const now = new Date().getTime();
-                const distance = matchTime - now;
-                
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                document.getElementById("countdown").innerHTML = 
-                    (hours < 10 ? '0' + hours : hours) + ":" + 
-                    (minutes < 10 ? '0' + minutes : minutes) + ":" + 
-                    (seconds < 10 ? '0' + seconds : seconds);
-                
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("countdown").innerHTML = "LIVE NOW!";
-                }
-            }, 1000);
-        }
-        startCountdown(); // Timer ကို စတင်ရန်
-    </script>
+            <h2 class="section-title">🗳️ ယနေ့ပွဲစဉ် ဆန္ဒမဲ</h2>
+            
+            <div style="padding: 15px; text-align: center;">
+                <p>ပွဲရလဒ်ကို ခန့်မှန်းရန် အောက်ပါခလုတ်ကို နှိပ်ပါ:</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSddFOuGRVe6tq2vsh3fVTaJ3rwzhuFqPRlWvHXEf8aNwhQsjA/viewform" target="_blank"
+                   style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px; margin-top: 15px; font-weight: bold;">
+                   Vote ပေးရန် နှိပ်ပါ
+                </a>
+            </div>
+            
+        </aside>
+
 
 </body>
 </html>
