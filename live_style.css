@@ -132,7 +132,7 @@ tbody tr:hover {
 
 /* Sidebar (Chat) */
 .chat-box {
-    height: 700px; /* Chat Box အတွက် နေရာပိုပေးခြင်း */
+    height: 550px; /* Chat Box အတွက် နေရာပိုပေးခြင်း */
     background: #252525;
     border: 1px solid #333;
     border-radius: 8px;
