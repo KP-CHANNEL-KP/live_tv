@@ -61,22 +61,23 @@
         
         <aside class="sidebar">
             
-            <h2 class="section-title chat-title">💬 Live Chat Room</h2>
-            <div class="chat-box">
-                <script type="text/javascript">
-                var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-                (function(){
-                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-                s1.async=true;
-                s1.src='https://embed.tawk.to/6908f7f7e46567194f00decc/1j95gh8k6'; // <<< ခင်ဗျားရဲ့ ID ပါ
-                s1.charset='UTF-8';
-                s1.setAttribute('crossorigin','*');
-                s0.parentNode.insertBefore(s1,s0);
-                })();
-                </script>
-                </div>
+            <h2 class="section-title">📊 ပွဲစဉ် ဆန္ဒမဲ (Poll)</h2>
             
-            </aside>
+            <div class="poll-container" style="height: 600px; overflow: hidden; background: #252525;">
+                
+                <iframe 
+                    src="[သင်ဖန်တီးထားသော Poll/Vote ၏ Embed Link ကို ဤနေရာတွင် ထည့်ပါ]"
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Loading Poll...
+                </iframe>
+                
+            </div>
+            
+        </aside>
 
     </main>
     
@@ -85,7 +86,6 @@
     </footer>
 
     <script>
-        // စမ်းသပ်ရန်အတွက် JavaScript Timer နမူနာ
         function startCountdown() {
             // Live Match စမည့် အချိန် (ဥပမာ- 2025/11/10 တွင် ည 8:30) - လိုအပ်ရင် ပြင်ပါ
             const matchTime = new Date("Nov 10, 2025 20:30:00").getTime();
